@@ -1,0 +1,469 @@
+/* Body Background */
+body {
+    background-color: #fdf6e4; /* Light beige background for the page */
+}
+
+/* Slider Container */
+.slider-container {
+    position: relative; /* Allows positioning of child elements inside */
+    max-width: 75%; /* Limits the slider width */
+    margin: auto; /* Centers the slider horizontally */
+    overflow: hidden; /* Hides overflow content */
+    max-height: 400px; /* Restricts the height of the slider */
+}
+
+/* Slider */
+.slider {
+    display: flex; /* Enables the horizontal scrolling of slider items */
+    transition: transform 0.8s ease-in-out; /* Smooth transition for movement */
+}
+
+/* Individual Slider Item */
+.slider-item {
+    min-width: 100%; /* Ensures each item takes the full width of the container */
+    position: relative;
+}
+
+/* Image in the Slider */
+.slider-item img {
+    width: 100%; /* Image fills the container width */
+    height: 100%; /* Image takes full height of its container */
+    border-radius: 8px; /* Rounded corners for the image */
+    object-fit: cover; /* Ensures the image covers the entire area without stretching */
+}
+
+/* Navigation Arrows */
+.prev, .next {
+    position: absolute; /* Positions the arrows inside the slider */
+    top: 50%; /* Centers the arrows vertically */
+    transform: translateY(-50%); /* Centers the arrows vertically */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    color: white; /* White icon color */
+    border: none; /* No border for the arrows */
+    font-size: 1.5rem; /* Font size for the arrow icons */
+    padding: 10px; /* Padding around the arrows */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 50%; /* Circular arrows */
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+    z-index: 10; /* Ensures the arrows appear above other content */
+}
+
+.prev {
+    left: 10px; /* Positions the left arrow on the left */
+}
+
+.next {
+    right: 10px; /* Positions the right arrow on the right */
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darkens the background on hover */
+}
+
+/* Pagination Dots */
+.dots-container {
+    position: absolute;
+    bottom: 10px; /* Positions the dots at the bottom of the slider */
+    left: 50%; /* Centers the dots horizontally */
+    transform: translateX(-50%); /* Adjusts the position to ensure it's centered */
+    display: flex; /* Aligns the dots horizontally */
+    gap: 8px; /* Adds space between the dots */
+    z-index: 10; /* Ensures the dots appear above the slider */
+}
+
+.dot {
+    width: 12px; /* Smaller dots */
+    height: 12px; /* Smaller dots */
+    background-color: #bbb; /* Default gray color for dots */
+    border-radius: 50%; /* Circular dots */
+    display: inline-block;
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth color transition */
+}
+
+.dot:hover, .dot.active {
+    background-color: #333; /* Darker color for active or hovered dots */
+}
+
+/* Genres Section */
+.genres-section {
+    text-align: center; /* Centers the text */
+    margin: 40px 20px; /* Adds margin around the section */
+    padding: 2%; /* Adds padding inside the section */
+    background: black; /* Dark background */
+    border-radius: 2rem; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Adds shadow for depth */
+}
+
+/* Genres Section Title */
+.genres-section h2 {
+    font-size: 2.5vw; /* Responsive font size based on viewport width */
+    color: white; /* White text color */
+    margin-bottom: 2%; /* Adds margin below the title */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 2px; /* Adds spacing between letters */
+}
+
+/* Genres Section Paragraph */
+.genres-section p {
+    font-size: 2vw; /* Responsive font size */
+    color: white; /* White text color */
+    margin-bottom: 2%; /* Margin below paragraph */
+    line-height: 1.5; /* Line height for readability */
+}
+
+/* Genres Grid */
+.genres-grid {
+    display: grid; /* Displays the items in a grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Responsive grid with flexible columns */
+    gap: 2%; /* Adds space between the grid items */
+}
+
+/* Individual Genre Item */
+.genre-item {
+    display: flex; /* Flexbox layout for alignment */
+    flex-direction: column; /* Stacks items vertically */
+    align-items: center; /* Centers content horizontally */
+    padding: 4%; /* Padding inside each item */
+    border-radius: 2rem; /* Rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease; /* Smooth transitions for hover effects */
+}
+
+.genre-item:hover {
+    transform: translateY(-8px) scale(1.03); /* Slightly lifts and scales the item on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Adds a shadow on hover */
+}
+
+.genre-item i {
+    font-size: 3vw; /* Responsive icon size */
+    color: #f39c12; /* Default icon color */
+    margin-bottom: 5%; /* Adds margin below the icon */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.genre-item:hover i {
+    color: #e67e22; /* Changes icon color on hover */
+}
+
+/* Genre Item Link */
+.genre-item a {
+    text-decoration: none; /* Removes underline from the link */
+    color: #e67e22; /* Orange color for the link */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Sorting Form */
+.sort-form {
+    margin-top: 30px; /* Adds margin at the top of the form */
+}
+
+.sort-form .sort-options,
+.sort-form .order-options {
+    display: inline-block; /* Aligns the options inline */
+    margin-right: 30px; /* Adds space between the options */
+}
+
+.sort-form select {
+    padding: 8px 12px; /* Padding inside the dropdown */
+    border-radius: 4px; /* Rounded corners for the select box */
+    border: 1px solid #ccc; /* Border color */
+    font-size: 1rem; /* Font size */
+}
+
+/* Books Grid */
+.books-grid {
+    display: grid; /* Grid layout for books */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Flexible columns for books */
+    gap: 30px; /* Space between the grid items */
+    margin-top: 30px; /* Adds margin at the top */
+}
+
+/* Home Image */
+.home-img {
+    width: 80%; /* Image takes 80% of the container width */
+    max-width: 700px; /* Restricts the image width */
+    height: auto; /* Maintains aspect ratio */
+    margin-top: 5%; /* Margin at the top */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow around the image */
+    margin-left: auto; /* Centers the image horizontally */
+    margin-right: auto;
+    display: block; /* Ensures it's a block element */
+}
+
+/* New Arrivals Section */
+.new-arrivals-section {
+    text-align: center; /* Centers the text */
+    color: #333; /* Text color */
+    margin-top: 40px; /* Margin at the top */
+}
+
+
+/* New Arrivals Section Title */
+.new-arrivals-section h2 {
+    font-size: 28px; /* Font size for the title */
+    color: #000; /* Default title color */
+    margin-bottom: 10px; /* Margin below the title */
+    font-weight: bold; /* Bold title */
+
+}
+
+/* New Arrivals Section Paragraph */
+.new-arrivals-section p {
+    font-size: 16px; /* Font size for description */
+    color: #000; /* Text color */
+    margin-bottom: 20px; /* Margin below the paragraph */
+}
+
+/* Book Grid */
+.new-arrivals-section .books-grid {
+    display: flex; /* Flexbox layout for books */
+    justify-content: center; /* Centers the grid */
+    gap: 20px; /* Space between the books */
+    flex-wrap: wrap; /* Allows wrapping for small screens */
+
+}
+
+/* Book Item Style */
+.new-arrivals-section .book-item {
+    width: 17%; /* Width of each book item */
+    background-color: #fdf6e4;
+    text-align: center; /* Centers the content */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow around each book item */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effect */
+}
+
+/* Book Image in New Arrivals */
+.new-arrivals-section .book-item img {
+    width: 250px; /* Fixed image width */
+    height: 250px; /* Fixed image height */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Book Title  in New Arrivals */
+.new-arrivals-section .book-item h3
+ {
+    font-size: 14px; /* Font size for title and description */
+    color: #000; /* Text color */
+    font-weight: bold;
+}
+
+/* Book Description in New Arrivals */
+.new-arrivals-section .book-item p {
+    font-size: 12px; /* Font size for title and description */
+    color: #000; /* Text color */
+}
+
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+    display: inline-block; /* Inline display */
+    background-color: #007bff; /* Blue color */
+    color: #ffffff; /* White text */
+    font-size: 14px; /* Font size */
+    padding: 8px 8px; /* Padding inside the button */
+    width: 80%;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Removes underline */
+    transition: background-color 0.3s, transform 0.2s; /* Hover effects */
+
+}
+
+.add-to-cart-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarges the button on hover */
+}
+
+
+/* Search Results Page */
+.book-list {
+    display: flex; /* Flexbox layout to align books in rows */
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    gap: 20px; /* Space between book items */
+    margin-top: 20px; /* Margin at the top of the list */
+}
+
+/* Search page Book Item */
+.book-item {
+    width: 200px; /* Fixed width for each book item */
+    padding: 15px; /* Padding inside each book item */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 8px; /* Rounded corners for the book item */
+    text-align: center; /* Centers text and image */
+    background-color: #fff; /* White background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
+}
+
+.book-item:hover {
+    transform: translateY(-10px); /* Lifts the item up on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+/* Book Image */
+.book-item img {
+    width: 100%; /* Makes the image take full width of the item */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 4px; /* Rounded corners for the image */
+    margin-bottom: 10px; /* Adds space below the image */
+}
+
+/* Book Title */
+.book-item h2 {
+    font-size: 1.2rem; /* Font size for the title */
+    color: #333; /* Dark gray color for the text */
+    margin: 10px 0; /* Adds margin above and below the title */
+}
+
+/* Book Title Link */
+.book-item h2 a {
+    text-decoration: none; /* Removes underline from the link */
+    color: #333; /* Dark gray text color */
+    transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+.book-item h2 a:hover {
+    color: #007bff; /* Blue color for the link on hover */
+}
+
+/* Book Description */
+.book-item p {
+    font-size: 0.9rem; /* Smaller font size for the description */
+    color: #555; /* Medium gray text color */
+    margin: 5px 0; /* Adds space above and below the description */
+}
+
+/* Last Paragraph (e.g., Book Author or Price) */
+.book-item p:last-child {
+    font-style: italic; /* Italic style for the last paragraph */
+    color: #888; /* Lighter gray color for the last paragraph */
+}
+
+/* No Results Message */
+.no-results {
+    text-align: center; /* Centers the text */
+    font-size: 1.2rem; /* Font size for the message */
+    color: #999; /* Light gray color for the message */
+    margin-top: 50px; /* Adds space above the message */
+}
+
+/* Header */
+h1 {
+    font-size: 2rem; /* Larger font size for the header */
+    color: #333; /* Dark gray color for the text */
+    margin-bottom: 20px; /* Adds space below the header */
+}
+
+
+/* Review Section */
+.latest-reviews-section h2 {
+    font-size: 28px; /* Setting the font size for the section title */
+    font-weight: bold; /* Making the section title bold */
+    text-align: center; /* Centering the title */
+    color: #333; /* Dark color for the title */
+    margin-bottom: 20px; /* Space below the title */
+    text-transform: uppercase; /* Transforming the text to uppercase */
+    letter-spacing: 1px; /* Adding spacing between letters */
+    margin-top: 40px; /* Space above the title */
+}
+
+.latest-reviews-section p {
+    text-align: center; /* Centering the paragraph text */
+    font-size: 16px; /* Font size for the paragraph */
+    color: #777; /* Lighter color for the paragraph text */
+    margin-bottom: 40px; /* Space below the paragraph */
+}
+
+/* Grid Layout for Reviews */
+.reviews-grid {
+    display: grid; /* Using grid layout for the reviews */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Automatically adjust the number of columns based on screen size */
+    gap: 20px; /* Space between the review items */
+    justify-items: center; /* Centering each review item */
+}
+
+/* Individual Review Item */
+.review-item {
+    padding: 15px; /* Adding padding inside each review card */
+    background-color: #fff; /* White background for the review cards */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    max-width: 350px; /* Maximum width for each review card */
+    text-align: center; /* Centering the content inside the card */
+    display: flex; /* Using flexbox for layout */
+    flex-direction: column; /* Aligning content vertically */
+    justify-content: space-between; /* Distributing space between content */
+    height: 100%; /* Ensuring the card fills its container height */
+}
+
+.review-item:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.review-item h3 {
+    font-size: 22px; /* Font size for the review title */
+    font-weight: 600; /* Semi-bold weight for the review title */
+    color: #333; /* Dark color for the review title */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+.review-item p {
+    font-size: 14px; /* Font size for the review description */
+    color: #555; /* Darker gray color for the review text */
+    line-height: 1.6; /* Increasing line height for readability */
+    margin-bottom: 15px; /* Space below the review description */
+}
+
+.review-item .review-rating {
+    font-size: 16px; /* Font size for the rating */
+    font-weight: 700; /* Bold weight for the rating */
+    color: #f39c12; /* Gold color for ratings */
+    margin-bottom: 15px; /* Space below the rating */
+}
+
+.review-item small {
+    font-size: 12px; /* Smaller font size for additional text */
+    color: #aaa; /* Light gray color for less important text */
+    font-style: italic; /* Italicizing the text */
+}
+
+.review-item .review-text {
+    font-size: 16px; /* Font size for the full review text */
+    color: #444; /* Dark gray color for the review text */
+    line-height: 1.5; /* Line height for readability */
+    margin-top: 10px; /* Space above the review text */
+}
+
+/* Button Styles for Sliding */
+button.prev, button.next {
+    position: absolute; /* Positioning the buttons absolutely within the container */
+    top: 50%; /* Vertically centering the buttons */
+    transform: translateY(-50%); /* Adjusting the position to center the buttons */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    color: white; /* White color for the text on the buttons */
+    border: none; /* Removing the border */
+    font-size: 24px; /* Font size for the button text */
+    padding: 15px; /* Padding inside the buttons */
+    cursor: pointer; /* Changing the cursor to pointer to indicate clickable */
+    border-radius: 50%; /* Circular buttons */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    z-index: 10; /* Ensuring the buttons appear above other content */
+}
+
+button.prev {
+    left: 10px; /* Positioning the 'previous' button on the left */
+}
+
+button.next {
+    right: 10px; /* Positioning the 'next' button on the right */
+}
+
+button.prev:hover, button.next:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+}
+

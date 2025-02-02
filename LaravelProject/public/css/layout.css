@@ -1,0 +1,208 @@
+/* Basic Reset: Resets margins, padding, and box-sizing for all elements */
+* {
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    box-sizing: border-box; /* Includes padding and border in the element's total width/height */
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex; /* Flexbox layout to align items horizontally */
+    justify-content: space-between; /* Space out the elements between left and right */
+    align-items: center; /* Vertically centers items */
+    padding: 2% 5%; /* Padding inside the navbar */
+    background-color: #333; /* Dark background color for the navbar */
+}
+
+/* Logo link */
+.logo a {
+    text-decoration: none; /* Removes the underline from the logo link */
+}
+
+/* Main logo styling */
+.main-logo {
+    height: 5vw; /* Height based on viewport width for responsiveness */
+    width: 5vw; /* Width based on viewport width for responsiveness */
+    border-radius: 50%; /* Makes the logo a circle */
+    object-fit: cover; /* Ensures the logo covers the entire area without distortion */
+    border: 2px solid #fff; /* White border around the logo */
+}
+
+/* Chapter House text styling */
+.chapter-house {
+    font-size: 1.5rem; /* Sets font size */
+    font-weight: bold; /* Bold text */
+    color: #f39c12; /* Orange color */
+    text-decoration: none; /* Removes underline */
+}
+
+/* Hover effect for Chapter House link */
+.chapter-house:hover {
+    color: #d35400; /* Darker orange color on hover */
+}
+
+/* Navbar links container */
+.navbar-links ul {
+    display: flex; /* Flexbox to arrange links horizontally */
+    list-style: none; /* Removes bullet points from the list */
+    justify-content: center; /* Centers the links */
+    align-items: center; /* Vertically aligns the links */
+    width: 100%; /* Takes up the full width */
+}
+
+/* Navbar link items */
+.navbar-links li {
+    margin: 0 15px; /* Spacing between list items */
+    position: relative; /* Added for dropdown positioning */
+}
+
+/* Navbar dropdown styling */
+.navbar-links li.dropdown {
+    position: relative; /* Allows dropdown to be positioned */
+}
+
+/* Navbar link (anchor) styling */
+.navbar-links a {
+    color: #fff; /* White text color */
+    font-size: 18px; /* Font size for links */
+    text-decoration: none; /* Removes underline */
+    display: inline-flex; /* Inline block for flexible content */
+    align-items: center; /* Aligns text and icons vertically */
+    justify-content: center; /* Centers text and icons horizontally */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and scaling */
+}
+
+/* Hover effect for navbar links */
+.navbar-links a:hover {
+    transform: scale(1.1); /* Slightly enlarges the link on hover */
+    text-shadow: 0 2px 10px rgba(255, 152, 0, 0.7); /* Adds a glowing text effect on hover */
+}
+
+/* Icon inside navbar link */
+.navbar-links a i {
+    margin: 0; /* Removes any margin around the icon */
+    font-size: 22px; /* Increases the icon size for a professional appearance */
+}
+
+
+/* Dropdown Styling */
+.dropdown {
+    position: relative; /* Ensures the dropdown menu can be positioned relative to this container */
+}
+
+/* Dropdown Button Styling */
+.dropbtn {
+    text-decoration: none; /* Removes underline from the button text */
+    background-color: transparent; /* Transparent background */
+    color: #fff; /* White text color */
+    border: none; /* No border around the button */
+    cursor: pointer; /* Changes the cursor to a pointer to indicate interactivity */
+    font-size: 17px; /* Font size for the button text */
+    padding: 10px 15px; /* Padding inside the button */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+/* Dropdown Button Hover Effect */
+.dropbtn:hover {
+    color: #ff9800; /* Changes text color to orange when hovered */
+    text-shadow: 0 2px 10px rgba(255, 152, 0, 0.7); /* Adds a glowing orange shadow effect on hover */
+}
+
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+    display: none; /* Hides the dropdown by default */
+    position: absolute; /* Positions the dropdown relative to its parent */
+    top: 100%; /* Places the dropdown just below the parent element */
+    left: 0; /* Aligns the dropdown to the left of the parent */
+    background-color: #444; /* Dark background color for the dropdown */
+    min-width: 180px; /* Ensures the dropdown has a minimum width */
+    border-radius: 4px; /* Slightly rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow to the dropdown */
+    z-index: 1000; /* Ensures the dropdown appears above other elements */
+    padding: 10px 0; /* Vertical padding */
+    opacity: 0; /* Initially invisible */
+    transform: translateY(10px); /* Starts with a slight downward position */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade-in and upward movement */
+}
+
+/* Dropdown menu link styling */
+.dropdown-menu a {
+    color: #fff; /* White text color */
+    padding: 12px 20px; /* Padding around the text */
+    text-decoration: none; /* Removes underline */
+    display: block; /* Makes each item a block element */
+    font-size: 16px; /* Font size for the links */
+    transition: background-color 0.3s ease; /* Smooth background color change on hover */
+}
+
+/* Hover effect for dropdown menu links */
+.dropdown-menu a:hover {
+    background-color: #555; /* Darker background on hover */
+    color: #ff9800; /* Change text color to orange on hover */
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+    display: block; /* Makes the dropdown visible on hover */
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Moves the dropdown to its original position */
+}
+
+/* Dropdown arrow icon default state */
+.dropbtn i {
+    opacity: 1; /* Icon is visible by default */
+    transform: translateY(0); /* Icon starts at its original position */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transitions for transform and color */
+}
+
+/* Hover effect for the dropdown button's icon */
+.dropbtn:hover i {
+    transform: translateY(-3px); /* Moves the icon upward on hover */
+    color: #ff9800; /* Changes the icon color to orange on hover */
+}
+
+/* Logo inside the Home link */
+.nav-logo {
+    height: 30px; /* Fixed height for the logo */
+    width: 30px; /* Fixed width for the logo */
+    border-radius: 50%; /* Makes the logo circular */
+    object-fit: cover; /* Ensures the image fills the container without distortion */
+    margin-right: 10px; /* Space between the logo and text */
+    vertical-align: middle; /* Vertically aligns the logo with text */
+}
+
+/* Search form input styling */
+.search-form input {
+    padding: 3px; /* Padding inside the search input */
+    border-radius: 7px; /* Slightly rounded corners */
+    border: 1px solid #ccc; /* Light border color */
+}
+
+/* Search form button styling */
+.search-form button {
+    padding: 3px 5px; /* Padding inside the button */
+    border-radius: 5px; /* Rounded corners */
+    border: none; /* Removes border */
+    background-color: #ff9800; /* Orange background color */
+    color: #fff; /* White text color */
+    cursor: pointer; /* Indicates button is clickable */
+}
+
+/* Hover effect for the search button */
+.search-form button:hover {
+    background-color: #ff5722; /* Darker orange on hover */
+}
+
+/* Icon styling */
+.icon-cart, .icon-heart, .icon-user, .icon-logout {
+    font-size: 20px; /* Standard icon size */
+}
+
+
+
+/* Main Content Styling */
+main {
+    padding: 30px; /* Adds padding around the main content */
+}
+
